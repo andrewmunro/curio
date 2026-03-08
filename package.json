@@ -1,0 +1,29 @@
+{
+	"name": "curio",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"deploy": "bun run build && wrangler pages deploy ./dist --project-name=curio --branch=main",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"fuse.js": "^7.0.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-force-graph-2d": "^1.29.0",
+		"sql.js": "^1.14.1",
+		"wrangler": "^4.71.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.0.0",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"@types/sql.js": "^1.4.9",
+		"@vitejs/plugin-react": "^4.3.0",
+		"tailwindcss": "^4.0.0",
+		"typescript": "^5.7.0",
+		"vite": "^6.1.0"
+	}
+}

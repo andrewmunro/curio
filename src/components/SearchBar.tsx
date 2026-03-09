@@ -37,7 +37,7 @@ export function SearchBar({ query, onQueryChange }: SearchBarProps) {
       <input
         ref={inputRef}
         type="text"
-        placeholder="Search... (⌘K)"
+        placeholder={`Search... (${navigator.platform.startsWith("Mac") ? "⌘" : "Ctrl+"}K)`}
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
         className="w-full pl-10 pr-8 py-2 rounded-lg bg-zinc-800 border border-zinc-700 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"

@@ -1,5 +1,7 @@
 # Curio
 
+**[curio.mun.sh](https://curio.mun.sh)**
+
 A personal interest tracker that maps connections between the things you love — movies, music, books, games, travel, and more.
 
 Add items and let AI categorize them, suggest relationships, and build a graph of your taste over time.

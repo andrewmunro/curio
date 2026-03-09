@@ -577,6 +577,13 @@ export function GraphView({ onEntryClick, refreshKey, query, selectedCategory, s
 					backgroundColor="#09090b"
 					nodeCanvasObject={nodeCanvasObject}
 					nodeCanvasObjectMode={() => "replace" as const}
+					nodePointerAreaPaint={(node: GraphNode, color, ctx) => {
+						const r = Math.sqrt(node.val);
+						ctx.beginPath();
+						ctx.arc(node.x ?? 0, node.y ?? 0, r, 0, 2 * Math.PI);
+						ctx.fillStyle = color;
+						ctx.fill();
+					}}
 					nodeLabel={(node: GraphNode) => (node as any).__tooltip || node.name}
 					linkColor={linkColor}
 					linkWidth={linkWidth}

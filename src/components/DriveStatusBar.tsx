@@ -47,27 +47,8 @@ export function DriveStatusBar({ driveState }: Props) {
 
   const saveDisabled = saveStatus === "saving";
 
-  if (status === "disconnected" || status === "error") {
-    return (
-      <button
-        onClick={() => drive.connect()}
-        className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-zinc-400 hover:text-zinc-200 border border-zinc-700 hover:border-zinc-500 rounded-lg transition-colors whitespace-nowrap"
-      >
-        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.5 20Q4.22 20 2.61 18.43 1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.51-2.27 2.29-3.71Q9.32 4 11.5 4q2.93 0 4.96 2.04Q18.5 8.07 18.5 11q1.78.2 2.89 1.5 1.11 1.3 1.11 3 0 1.88-1.31 3.19Q19.88 20 18 20Z"/>
-        </svg>
-        Connect Drive
-        {status === "error" && <span className="text-red-400 ml-1">!</span>}
-      </button>
-    );
-  }
-
-  if (status === "connecting") {
-    return (
-      <div className="flex items-center gap-2 px-3 py-1.5 text-xs text-zinc-400 border border-zinc-700 rounded-lg whitespace-nowrap">
-        <span className="animate-spin">⟳</span> Connecting…
-      </div>
-    );
+  if (status === "disconnected" || status === "error" || status === "connecting") {
+    return null;
   }
 
   // connected
